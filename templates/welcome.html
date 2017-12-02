@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Welcome</title>
+        <link rel="stylesheet" type="text/css" href="../static/css/welcome.css"/>
+    </head>
+    <body>
+        <div class="head">
+            <h2>欢迎登录</h2>
+            <p>亲爱的&nbsp{{username}}，您好</p>
+        </div>
+        <div id="mainContent">
+            <h1>便捷导航</h1>
+            <h2>门户网站</h2>
+            <section>
+                <a href="http://www.firefoxchina.cn/" target="_blank">火狐中文网</a>
+                <a href="http://music.163.com/" target="_blank">网易云音乐</a>                        
+                <a href="http://news.sina.com.cn/" target="_blank">新浪新闻</a>
+                <a href="http://www.xinhuanet.com/" target="_blank">新华网</a>
+                <a href="http://www.163.com/" target="_blank">网易</a>
+                <a href="https://www.zhihu.com/" target="_blank">知乎</a>
+            </section>
+        </div>        
+       <div class="userMessage">
+           {% if messages is not None %}
+           <ul>
+               <!-- messages是字典的列表 -->
+               {% for doc in messages %}
+               <div class="para">
+                   <p style="text-align:left">我在&nbsp&nbsp{{doc.get("date")}}&nbsp&nbsp说：{{doc.get('message')}}</p>
+               </div>
+               {% end %}
+           </ul>
+            {% end %}
+            <div style="clear:both;">
+                <p>有话要说 : ) ?</p>
+                <form method="post" id="messageForm">
+                    {% module xsrf_form_html() %}
+                    留言板:<br/>
+                    <textarea id="textMessage" rows="5" cols="60" name="leaveMessage" placeholder="说点什么 ..."></textarea>
+                    <br/><input style="cursor:pointer;" id="but" type="submit" value="就这些吧！"/>
+                </form><br/>
+                <a href="/logout">退出登录</a><br/>
+            </div>
+        </div>
+        <footer>
+            <p>版权所有 &copy 2017</p>
+        </footer>
+    </body>
+</html>
