@@ -19,7 +19,7 @@ from pymongo import MongoClient
 clientMon = MongoClient("mongodb://localhost:27017")
 clientMy = pymysql.connect(
     host='localhost',
-    database='info',
+    database='usercount',
     charset='utf8mb4',
     # read_default_file='my.cnf',
     bind_address='127.0.0.1',

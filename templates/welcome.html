@@ -28,17 +28,16 @@
                <!-- messages是字典的列表 -->
                {% for doc in messages %}
                <div class="para">
-                   <p style="text-align:left">我在&nbsp&nbsp{{doc.get("date")}}&nbsp&nbsp说：{{doc.get('message')}}</p>
+                   <p>我在&nbsp&nbsp{{doc.get("date")}}&nbsp&nbsp说：{{doc.get('message')}}</p>
                </div>
                {% end %}
            </ul>
             {% end %}
-            <div style="clear:both;">
-                <p>有话要说 : ) ?</p>
+            <div style="clear:both; text-align:center;">
+                <h3 style="font-weight: bold;">有话要说 :-) ?</h3>
                 <form method="post" id="messageForm">
                     {% module xsrf_form_html() %}
-                    留言板:<br/>
-                    <textarea id="textMessage" rows="5" cols="60" name="leaveMessage" placeholder="说点什么 ..."></textarea>
+                    <textarea id="textMessage" rows="6" cols="80" name="leaveMessage" placeholder="说点什么 ..."></textarea>
                     <br/><input style="cursor:pointer;" id="but" type="submit" value="就这些吧！"/>
                 </form><br/>
                 <a href="/logout">退出登录</a><br/>

@@ -11,13 +11,19 @@
 }
  .head h2{
     font-family: 幼圆;
-} 
+}
+.para p{
+    font-size: 10px;
+    text-align: left;
+    line-height: 12px;
+    font-family: 幼圆, 宋体;
+}
 #mainContent{
-    height: 300px;
+    height: 180px;
     text-align: center;
     border-radius: 3px;
     border:1px solid #CDCD00;
-    background-color: #EEE685;
+    background-color: rgb(108, 216, 81);
 }
 #mainContent h1,h2{
     text-align: center;
@@ -34,10 +40,10 @@ section a{
     font-family: 宋体;
 }
 #but{
-    height: 30px;
+    height: 35px;
     width: 80px;
-    /* color: #7D26CD; */
-    /* background-color: white; */
+    color: #7D26CD;
+    background-color: white;
     border-radius: 3px;
 }
 .userMessage{
