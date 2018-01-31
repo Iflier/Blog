@@ -3,6 +3,8 @@
 Dec: 网页版的日记本
 Created on: 2017.11.30
 Author: Iflier
+Modified on: 2018.01.31
+cookie有效期为用户关闭浏览器之前
 """
 import time
 import os.path
@@ -95,8 +97,9 @@ class LoginHandler(BaseHandler):
             result = self.cursor.execute(sql, (username, password))
             if isinstance(self.cursor.fetchone(), dict):
                 # 即查询的用户是存在的
-                self.set_secure_cookie('username', username, expires=time.time() + 2 * 60 * 60)
+                self.set_secure_cookie('username', username, expires_days=None)
                 # cookie有效期2小时
+                # 修改为用户关闭浏览器之前  --Modified on: 2018.01.31
                 self.redirect("/welcome", permanent=False)
             else:
                 # 用户不存在的话
