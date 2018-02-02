@@ -5,3 +5,7 @@
 # 2018.01.31 修改cookie的有效期
 此次把Cookie的有效期设置为关闭浏览器之前
 ### Note: 用户名和密码是要自己事先在MySQL中写入的
+
+## License
+
+[Apache License 2.0](LICENSE)
